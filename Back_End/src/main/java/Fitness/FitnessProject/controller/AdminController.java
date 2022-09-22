@@ -28,7 +28,7 @@ public class AdminController {
 			temp.update("insert into login (email,password,role,username) values (?,?,?,?)",ar.getEmail(),ar.getPassword(),"admin",ar.getUsername());
 			int loginid=temp.queryForObject("select loginid from login where username='"+ar.getUsername()+"' and password='"+ar.getPassword()+"'",Integer.class);	
 			temp.update("insert into admin (contactno,email,fullname,loginid,status) values (?,?,?,?,?)",ar.getContactno(),ar.getEmail(),ar.getFullname(),loginid,ar.getStatus());
-			message="Successfully Added";
+			message="Successfully Added ,Your Login Id :"+loginid;
 		} catch (DataAccessException e) {
 			message="Username Already exists choose another one";
 			e.printStackTrace();

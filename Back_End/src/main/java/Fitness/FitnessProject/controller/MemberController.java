@@ -30,9 +30,9 @@ public class MemberController {
 			int loginid=temp.queryForObject("select loginid from login where username='"+mr.getUsername()+"' and password='"+mr.getPassword()+"'",Integer.class);	
 			temp.update("insert into member (chest,contactno,email,fullname,gender,height,injury,status,tid,waist,weight,loginid) values (?,?,?,?,?,?,?,?,?,?,?,?)",mr.getChest(),mr.getContactno(),mr.getEmail(),mr.getFullname(),mr.getGender(),mr.getHeight(),mr.getInjury(),mr.getStatus(),mr.getTid(),mr.getWaist(),mr.getWeight(),loginid);
 			temp.update("insert into payment(name,fees,loginid) values(?,?,?)",mr.getFullname(),mr.getFees(),loginid);
-			message="Successfully Added";
+			message="Successfully Added ,Your Login Id :"+loginid;
 		} catch (DataAccessException e) {
-			message="Query Failed";
+			message="Username Already exists choose another one";
 			e.printStackTrace();
 		}		
 		return message;	

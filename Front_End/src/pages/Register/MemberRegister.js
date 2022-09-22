@@ -25,6 +25,7 @@ function MemberRegister() {
     const [password, setPassword] = useState("");
     const [messege, setMessege] = useState("");
     const [payment, setPayment] = useState("");
+    const [tid, setTid] = useState("");
 
 
     function addData() {
@@ -42,6 +43,7 @@ function MemberRegister() {
         user.username = username;
         user.password = password;
         user.fees = payment;
+        user.tid=tid
 
         console.log(user);
 
@@ -145,6 +147,10 @@ function MemberRegister() {
                                                 <label className="form-label">Contact</label>
                                                 <input type="number" placeholder='enter your contact no' className="form-control form-control-lg" required minLength={3} maxLength={16} onBlur={(e) => { setContact(e.target.value) }} />
                                             </div>
+                                            <div className="form-outline mb-4">
+                                                <label className="form-label">Trainer Id</label>
+                                                <input type="mail" placeholder='enter trainer id' className="form-control form-control-lg" required  onBlur={(e) => { setTid(e.target.value) }} />
+                                            </div>
                                             <div>
                                                 <label className="form-label">Status</label>
                                                 <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setStatus(e.target.value); }}>
@@ -153,11 +159,19 @@ function MemberRegister() {
                                                     <option value="inactive">InActive</option>
                                                 </select>
                                             </div>
-                                            <div className="form-outline mb-4">
+                                            <div>
                                                 <label className="form-label">Payment</label>
-                                                <input type="number" placeholder='enter your contact no' className="form-control form-control-lg" required onBlur={(e) => { setPayment(e.target.value) }} />
+                                                <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setPayment(e.target.value); }}>
+                                                    <option value="150">150 RS.</option>
+                                                    <option value="500">500 RS.</option>
+                                                    <option value="1500">1500 RS.</option>
+                                                    <option value="2500">2500 RS.</option>
+                                                    <option value="3500">3500 RS.</option>
+                                                    <option value="5600">5600 RS.</option>
+                                                    <option value="8000">8000 RS.</option>
+                                                </select>
                                             </div>
-                                            <b style={{ 'color': 'red' }}>{messege}</b>
+                                            <b style={{ 'color': 'orangered' }}>{messege}</b>
                                             <div className="pt-1 mb-4">
                                                 <button className="btn btn-dark btn-lg btn-block" type="button" onClick={addData}>Register</button>
                                             </div>

@@ -30,9 +30,9 @@ public class TrainerController {
 			temp.update("insert into login (email,password,role,username) values (?,?,?,?)",tr.getEmail(),tr.getPassword(),"trainer",tr.getUsername());
 			int loginid=temp.queryForObject("select loginid from login where username='"+tr.getUsername()+"' and password='"+tr.getPassword()+"'",Integer.class);	
 			temp.update("insert into trainer (contactno,email,fees,fullname,speciality,status,workexp,loginid) values (?,?,?,?,?,?,?,?)",tr.getContactno(),tr.getEmail(),tr.getFees(),tr.getFullname(),tr.getSpeciality(),tr.getStatus(),tr.getWorkexp(),loginid);
-			message="Successfully Added";
+			message="Successfully Added ,Your Login Id :"+loginid;
 		} catch (DataAccessException e) {
-			message="Query Failed";
+			message="Username Already exists choose another one";
 			e.printStackTrace();
 		}		
 		return message;	

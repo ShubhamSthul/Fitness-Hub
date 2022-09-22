@@ -7,17 +7,17 @@ export default function ForgetPassword() {
 
     const [username, setusername] = useState("");
     const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
+    const [loginid, setLoginid] = useState("");
     const [messege, setMessege] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
     function updateData() {
         const user = {};
-        user.user_name = username;
+        user.username = username;
         user.password = password;
-        user.email_id = email;
+        user.loginid = loginid;
 
-        if(username=="" || password=="" || email=="")
+        if(username=="" || password=="" || loginid=="")
         {
             setMessege("Enter Valid Data");
             return;
@@ -25,7 +25,7 @@ export default function ForgetPassword() {
 
 
         if (password == confirmPassword) {
-            axios.post("http://localhost:8080/sharesteer/forgetpassword", user)
+            axios.post("http://localhost:8080/forgetpassword", user)
                 .then((response) => {setMessege(response.data) })
                 .catch((error) => {setMessege("Invalid Username Or Email") })
         }
@@ -57,24 +57,28 @@ export default function ForgetPassword() {
 
 
                                                 <div className="form-outline mb-4">
-                                                    <input type="text" className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setusername(e.target.value) }} />
-                                                    <label className="form-label">Username</label>
+                                                <label className="form-label">Username</label>
+                                                    <input type="text" className="form-control form-control-lg" placeholder='enter username' required minLength={8} maxLength={16} onBlur={(e) => { setusername(e.target.value) }} />
+                                                    
                                                 </div>
 
 
                                                 <div className="form-outline mb-4">
-                                                    <input type="email" className="form-control form-control-lg" required onBlur={(e) => { setEmail(e.target.value) }} />
-                                                    <label className="form-label">Registered Email</label>
+                                                <label className="form-label">Login Id</label>
+                                                    <input type="email" className="form-control form-control-lg" placeholder='enter login id' required onBlur={(e) => { setLoginid(e.target.value) }} />
+                                                    
                                                 </div>
 
                                                 <div className="form-outline mb-4">
-                                                    <input type="password" className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setPassword(e.target.value) }} />
-                                                    <label className="form-label">New Password</label>
+                                                <label className="form-label">New Password</label>
+                                                    <input type="password" className="form-control form-control-lg" placeholder='enter new password' required minLength={8} maxLength={16} onBlur={(e) => { setPassword(e.target.value) }} />
+                                                    
                                                 </div>
 
                                                 <div className="form-outline mb-4">
-                                                    <input type="password" className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setConfirmPassword(e.target.value) }} />
-                                                    <label className="form-label">Confirm Password</label>
+                                                <label className="form-label">Confirm Password</label>
+                                                    <input type="password" className="form-control form-control-lg" placeholder='confirm new password' required minLength={8} maxLength={16} onBlur={(e) => { setConfirmPassword(e.target.value) }} />
+                                                    
                                                 </div>
 
                                                 <div className="pt-1 mb-4">
