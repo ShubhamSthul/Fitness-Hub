@@ -56,7 +56,6 @@ public class PaymentController {
 			try {
 				pm = temp.query("select * from payment",(rs,rownum)->{return new Payment(rs.getInt(1),rs.getDouble(2),rs.getString(3),rs.getInt(4));});
 			} catch (DataAccessException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	

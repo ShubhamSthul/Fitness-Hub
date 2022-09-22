@@ -57,7 +57,6 @@ public class AdminController {
 		try {
 			list=temp.query("select * from admin,login where admin.loginid=login.loginid",(rs,rownum)->{return new AdminRegistration(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getString(9),rs.getString(10),rs.getString(11));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (ArrayList<AdminRegistration>) list;
@@ -70,7 +69,6 @@ public class AdminController {
 		try {
 			admin=temp.queryForObject("select * from admin,login where admin.loginid=login.loginid and admin.loginid="+id,(rs,rownum)->{return new AdminRegistration(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getString(6),rs.getString(9),rs.getString(10),rs.getString(11));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return admin;

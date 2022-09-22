@@ -57,7 +57,6 @@ public class TrainingPlanController {
 		try {
 			list=temp.query("select * from training_plan",(rs,rownum)->{return new TrainingPlan(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (ArrayList<TrainingPlan>) list;

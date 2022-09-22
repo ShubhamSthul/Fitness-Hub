@@ -51,7 +51,6 @@ public class AdminRegistration {
 	}
 	public AdminRegistration() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public String getUsername() {
 		return username;

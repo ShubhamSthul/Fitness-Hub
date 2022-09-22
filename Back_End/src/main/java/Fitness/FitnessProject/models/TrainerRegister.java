@@ -46,7 +46,6 @@ public class TrainerRegister {
 
 	public TrainerRegister() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public TrainerRegister(int tid,int contactno,  String email, Double fees,String fullname, String speciality, 

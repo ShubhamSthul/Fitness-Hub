@@ -43,7 +43,6 @@ public void setRole(String role) {
 
 public MemberRegister() {
 	super();
-	// TODO Auto-generated constructor stub
 }
 
 public MemberRegister(String username, String password, String fullname, String gender, double height, double weight,
@@ -80,7 +79,6 @@ public MemberRegister(int memid, double chest, int contactno, String email,Strin
 	this.email = email;
 	this.tid = tid;
 	this.loginid = loginid;
-	this.fees = fees;
 }
 
 public MemberRegister(int memid, double chest, int contactno, String email,String fullname, String gender, double height,

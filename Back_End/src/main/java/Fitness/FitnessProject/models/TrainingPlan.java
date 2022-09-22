@@ -19,7 +19,6 @@ public class TrainingPlan {
 	}
 	public TrainingPlan() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;

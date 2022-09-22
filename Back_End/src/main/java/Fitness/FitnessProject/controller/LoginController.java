@@ -1,7 +1,6 @@
 package Fitness.FitnessProject.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +22,6 @@ public class LoginController {
 			 id = temp.queryForObject("select loginid from login where username='"+login.getUsername()+"' and password='"+login.getPassword()+"'",Integer.class);
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return id;

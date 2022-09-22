@@ -73,7 +73,6 @@ public class MemberController {
 		try {
 			list=temp.query("select * from member",(rs,rownum)->{return new MemberRegister(rs.getInt(1),rs.getDouble(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDouble(7),rs.getString(8),rs.getString(9),rs.getInt(10),rs.getDouble(11),rs.getDouble(12),rs.getInt(13));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (ArrayList<MemberRegister>) list;
@@ -88,7 +87,6 @@ public class MemberController {
 		try {
 			member=temp.queryForObject("select * from member,login where member.loginid=login.loginid and member.loginid="+id,(rs,rownum)->{return new MemberRegister(rs.getInt(1),rs.getDouble(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDouble(7),rs.getString(8),rs.getString(9),rs.getInt(10),rs.getDouble(11),rs.getDouble(12),rs.getInt(13),rs.getString(16),rs.getString(17),rs.getString(18));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return member;
@@ -102,7 +100,6 @@ public class MemberController {
 		try {
 			list=temp.query("select * from member where tid="+tid,(rs,rownum)->{return new MemberRegister(rs.getInt(1),rs.getDouble(2),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getDouble(7),rs.getString(8),rs.getString(9),rs.getInt(10),rs.getDouble(11),rs.getDouble(12),rs.getInt(13));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (ArrayList<MemberRegister>) list;

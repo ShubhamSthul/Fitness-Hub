@@ -31,7 +31,6 @@ public class Trainer {
 	
 	public Trainer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	

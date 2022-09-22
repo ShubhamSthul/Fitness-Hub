@@ -74,7 +74,6 @@ public class TrainerController {
 		try {
 			list=temp.query("select * from trainer",(rs,rownum)->{return new TrainerRegister(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getDouble(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getInt(9));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return (ArrayList<TrainerRegister>) list;
@@ -88,7 +87,6 @@ public class TrainerController {
 		try {
 			trainer=temp.queryForObject("select * from trainer,login where trainer.loginid=login.loginid and trainer.loginid="+id ,(rs,rownum)->{return new TrainerRegister(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getDouble(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getInt(9),rs.getString(12),rs.getString(13),rs.getString(14));});
 		} catch (DataAccessException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return trainer;

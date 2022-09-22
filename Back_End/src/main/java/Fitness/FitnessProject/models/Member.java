@@ -57,7 +57,6 @@ public class Member
 
 	public Member() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	
