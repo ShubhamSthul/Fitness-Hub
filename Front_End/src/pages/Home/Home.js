@@ -93,18 +93,25 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
 
-
-     
-    <section>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <center>
      <h2><b>OUR PROFESSIONAL TRAINERS</b></h2>
-     <center>
-      <Table striped bordered hover className='table-responsive' width={100} >    
+     <br/>
+     <br/>
+     <br/>
+      <Table striped bordered hover variant="dark" style={{ 'textAlign': 'center'}}>    
         <thead>
           <tr>
             <th>Trainer Id</th>
             <th>Full Name</th>
             <th>Speciality</th>
             <th>Email</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -114,16 +121,15 @@ const Home = () => {
               <td>{user.fullname}</td>
               <td>{user.speciality}</td>
               <td>{user.email}</td>
+              <td>{user.status}</td>
             </tr>
           ))}
         </tbody>
-
       </Table>
+
       </center>
-      </section>
 
-
-
+      
       <div>
       </div>
     </div>

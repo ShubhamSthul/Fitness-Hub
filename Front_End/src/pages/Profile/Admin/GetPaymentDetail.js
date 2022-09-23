@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "../ride.css";
+import Table from 'react-bootstrap/esm/Table';
 
 function AllRides() {
-  
-  
-  const [payment,setPayment]=useState([])
-  const [add,setAdd]=useState(false)
-console.log(payment);
 
-  useEffect(()=>{
+
+  const [payment, setPayment] = useState([])
+  const [add, setAdd] = useState(false)
+  console.log(payment);
+
+  useEffect(() => {
 
     axios.get("http://localhost:8080/getpaymentdetails")
       .then((response) => {
@@ -21,25 +22,38 @@ console.log(payment);
         console.log(error);
       })
 
-  },[])
+  }, [])
 
-  
+
   return (
-    <div>
-    {add && payment.map((trans,index)=>(<div id='ride' key={index} style={{'textAlign':'center'}}>
-      <div className="card">
-        <div className="card-body">
-          <h5 className='btn btn-dark btn-lg btn-block'><b>Transaction Details</b></h5>
-        </div>
-        <ul className="list-group list-group-flush">
-          <li className="list-group-item"><b>Transaction Id</b>:{trans.pid}</li>
-          <li className="list-group-item"><b>Amount</b>:{trans.fees}</li>
-          <li className="list-group-item"><b>Name</b> :{trans.name}</li>
-          <li className="list-group-item"><b>LoginId</b> : {trans.loginid}</li>
-        </ul>
-        
-      </div>
-    </div>))}
+    <div style={{ 'textAlign': 'center' }}>
+      <br />
+      <br />
+      <center>
+        <h2><b>PAYMENT-DETAILS</b></h2>
+        <br />
+        <br />
+        <Table striped bordered hover variant="dark" style={{ 'textAlign': 'center'}}>
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>Amount</th>
+              <th>Name</th>
+              <th>Login ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            {add && payment.map((trans, index) => (
+              <tr key={index}>
+                <td>{trans.pid}</td>
+                <td>₹.{trans.fees}</td>
+                <td>{trans.name}</td>
+                <td>{trans.loginid}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </center>
     </div>
   )
 }

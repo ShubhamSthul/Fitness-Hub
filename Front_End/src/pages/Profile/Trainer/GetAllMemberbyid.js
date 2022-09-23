@@ -3,6 +3,7 @@ import { ReactSession } from 'react-client-session';
 
 import axios from 'axios';
 import "../ride.css";
+import Table from 'react-bootstrap/esm/Table';
 
 function GetAllMemberbyid() {
   const user = ReactSession.get("user");
@@ -25,7 +26,7 @@ function GetAllMemberbyid() {
   },[])
   return (
     <div>
-    {add && member.map((info,index)=>(<div id='ride' key={index} style={{'textAlign':'center'}}>
+    {/* {add && member.map((info,index)=>(<div id='ride' key={index} style={{'textAlign':'center'}}>
       <div className="card">
         <div className="card-body">
           <h5 className='btn btn-dark btn-lg btn-block'><b>Member Info</b></h5>
@@ -42,7 +43,48 @@ function GetAllMemberbyid() {
           <li className="list-group-item"><b>Status</b> : {info.status}</li>
         </ul>
       </div>
-    </div>))}
+    </div>))} */}
+
+<div style={{'textAlign':'center'}}>
+      <br/>
+      <br/>
+      <h1><b>MEMBER-INFORMATION</b></h1>
+      <br/>
+      <Table  striped bordered hover variant="dark" style={{ 'textAlign': 'center'}}>
+        <thead>
+          <tr>
+            <th>Member ID</th>
+            <th>Full Name</th>
+            <th>Trainer Id</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Chest</th>
+            <th>Waist</th>
+            <th>Injury</th>
+            <th>Email</th>
+            <th>ContactNo</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {add && member.map((info, index) => (
+            <tr key={index}>
+              <td>{info.memid}</td>
+              <td>{info.fullname}</td>
+              <td>{info.tid}</td>
+              <td>{info.height}</td>
+              <td>{info.weight}</td>
+              <td>{info.chest}</td>
+              <td>{info.waist}</td>
+              <td>{info.injury}</td>
+              <td>{info.email}</td>
+              <td>{info.contactno}</td>
+              <td>{info.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
     </div>
   )
 }

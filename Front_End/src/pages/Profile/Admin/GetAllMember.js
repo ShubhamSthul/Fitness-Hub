@@ -59,7 +59,13 @@ export default function AllUser() {
 
   }
   return (
-    <div>
+    <div style={{'textAlign':'center'}}>
+      <br/>
+      <br/>
+      
+      <h1><b>MEMBER-INFORMATION</b></h1>
+      <br/>
+     
       <Table striped bordered hover className='table-responsive'>
         <thead>
           <tr>

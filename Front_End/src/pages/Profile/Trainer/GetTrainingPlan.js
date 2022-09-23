@@ -42,9 +42,15 @@ export default function AllUser() {
   }
   return (
 
-    <div style={{"textAlign":"center"}}>
-      <h5>Update diet plan</h5>
-      <Table striped bordered hover className="table-responsive">
+    <div style={{"textAlign":"center"}} >
+      <br/>
+      <br/>
+     
+      <h1><b>TRAINING PLAN</b></h1>
+      <br/>
+     
+      <Table striped bordered hover className="table-responsive" width={100}>
+        <center>
         <thead>
           <tr>
             <th>ID</th>
@@ -65,6 +71,7 @@ export default function AllUser() {
             </tr>
           ))}
         </tbody>
+        </center>
       </Table>
     </div>
   )
