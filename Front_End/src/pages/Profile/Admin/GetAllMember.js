@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import axios from 'axios';
+import {ReactSession} from 'react-client-session';
+import { useHistory } from 'react-router-dom';
 export default function AllUser() {
   const [users, setUsers] = useState([]);
   const [user, setUser] = useState("");
@@ -16,9 +18,16 @@ export default function AllUser() {
   const [waist, setWaist] = useState(user.waist)
   const [status, setStatus] = useState(user.status)
   const [check, setCheck] = useState(false);
+  const history=useHistory();
 
 
-
+  function update(id){
+    ReactSession.set("mem",id);
+    history.push({
+      pathname:'/updatetrainingplan',
+      state:id
+    })
+  }
   useEffect(() => {
     axios.get("http://localhost:8080/getallmember")
       .then((response) => {
@@ -55,7 +64,7 @@ export default function AllUser() {
       })
       .catch((error) => {
         console.log(error);
-      })
+      })   
 
   }
   return (
@@ -102,6 +111,7 @@ export default function AllUser() {
               <td><input type='text' defaultValue={user.status} required onBlur={(e) => { setStatus(e.target.value); setUser(user) }} /></td>
               <td>{user.loginid}</td>
               <td><button className='btn btn-dark' onClick={() => { updateData(user) }}>Update</button></td>
+              <td><button className="btn btn-primary" onClick={()=>{update(user.memid)}} type="button">Training Plan</button></td>
             </tr>
           ))}
         </tbody>

@@ -31,6 +31,9 @@ public class MemberController {
 			temp.update("insert into member (chest,contactno,email,fullname,gender,height,injury,status,tid,waist,weight,loginid) values (?,?,?,?,?,?,?,?,?,?,?,?)",mr.getChest(),mr.getContactno(),mr.getEmail(),mr.getFullname(),mr.getGender(),mr.getHeight(),mr.getInjury(),mr.getStatus(),mr.getTid(),mr.getWaist(),mr.getWeight(),loginid);
 			temp.update("insert into payment(name,fees,loginid) values(?,?,?)",mr.getFullname(),mr.getFees(),loginid);
 			message="Successfully Added ,Your Login Id :"+loginid;
+			temp.update("insert into diet_plan(id) values (?)",loginid);
+			temp.update("insert into workout_plan(id) values (?)",loginid);
+
 		} catch (DataAccessException e) {
 			message="Username Already exists choose another one";
 			e.printStackTrace();

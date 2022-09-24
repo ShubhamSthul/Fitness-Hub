@@ -78,6 +78,19 @@ public class TrainerController {
 		}
 		return (ArrayList<TrainerRegister>) list;
 	}
+
+	@GetMapping("/getallactivetrainer")
+	public ArrayList<TrainerRegister> getAllTrainerbyactive()
+	{
+		List<TrainerRegister> list=new ArrayList<TrainerRegister>();
+		
+		try {
+			list=temp.query("select * from trainer where status='active'",(rs,rownum)->{return new TrainerRegister(rs.getInt(1),rs.getInt(2),rs.getString(3),rs.getDouble(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getInt(8),rs.getInt(9));});
+		} catch (DataAccessException e) {
+			e.printStackTrace();
+		}
+		return (ArrayList<TrainerRegister>) list;
+	}
 	
 	@GetMapping("/gettrainer/{id}")
 	public TrainerRegister getTrainer(@PathVariable int id)

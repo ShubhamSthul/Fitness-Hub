@@ -93,6 +93,13 @@ const Navbar = (props) => {
                 </i>Home
               </NavLink>
             </li>
+            {/* <li className="nav-item active">
+              <NavLink className="nav-link" to="/page" exact>
+                <i
+                  className="fas fa-home">
+                </i>Pagination Example
+              </NavLink>
+            </li> */}
 
             <li className="nav-item">
               <NavLink className="nav-link" to="/about" exact>
@@ -141,6 +148,7 @@ const Navbar = (props) => {
                     <NavLink className="nav-link" to={"/"+ReactSession.get("user").role} exact>
                       <i className="far fa-user">
                       </i>{ReactSession.get("user").fullname.toUpperCase()}
+                     
                     </NavLink> </li>
                   <li className="nav-item">
                     <NavLink className="nav-link" onClick={logout} to='/' exact>

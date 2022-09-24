@@ -25,7 +25,7 @@ const Services = () => {
             </div>
             <h3>State-of-the-Art Equipment</h3>
             <p>
-            Each Powerhouse facility offers high quality cardio & strength equipment.
+            Each Fitness-Hub facility offers high quality cardio & strength equipment.
             </p>
           </div>
         </div>

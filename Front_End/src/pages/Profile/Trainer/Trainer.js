@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { ReactSession } from 'react-client-session';
+import { NavDropdown } from 'react-bootstrap';
 function Trainer() {
   const user=ReactSession.get("user");
   const [trainer, setTrainer] = useState("")
@@ -22,8 +23,12 @@ function Trainer() {
     <div id='ride'>
       <div className="card">
         <div className="card-body">
-        <img src={'#'} style={{'borderRadius':'50%','height':'400px','width':'350px'}} />
+        {/* <img src={'#'} style={{'borderRadius':'50%','height':'400px','width':'350px'}} /> */}
         <h1 className="card-title">{trainer.fullname}</h1>
+                <NavDropdown title="Select" id="basic-nav-dropdown" className="btn btn-dark" alignRight>
+                    <NavDropdown.Item href="/updatetrainer">Update Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/getallmemberbyid">Get Member Info</NavDropdown.Item>
+                </NavDropdown>
         </div>
         <ul className="list-group list-group-flush">
             <li className="list-group-item"><b>role </b>:{trainer.role}</li>
@@ -35,13 +40,7 @@ function Trainer() {
             <li className="list-group-item"><b>Email </b>: {trainer.email}</li>
             <li className="list-group-item"><b>Contact No </b>: {trainer.contactno}</li>
           </ul>
-        <div className="card-body">
-          <a href="/updatetrainer" className="btn btn-dark btn-lg btn-block"><b>Update Profile</b></a>
-          <a href="/getallmemberbyid" className="btn btn-dark btn-lg btn-block"><b>GetMemberInfo</b></a>
-          <a href="/gettrainingplan" className="btn btn-dark btn-lg btn-block"><b>GetTrainingPlan</b></a>
-          <a href="/createtrainingplan" className="btn btn-dark btn-lg btn-block"><b>CreateTrainingPlan</b></a>
-          
-        </div>
+       
       </div>
 
     </div>

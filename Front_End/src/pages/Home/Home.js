@@ -19,7 +19,7 @@ const Home = () => {
   const [users, setUsers] = useState([]);
   const [check, setCheck] = useState(false);
   useEffect(() => {
-    axios.get("http://localhost:8080/getalltrainer")
+    axios.get("http://localhost:8080/getallactivetrainer")
       .then((response) => {
         setUsers(response.data);
         setCheck(true);

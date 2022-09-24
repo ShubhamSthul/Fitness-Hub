@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { ReactSession } from 'react-client-session';
-import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import { NavDropdown } from 'react-bootstrap';
+
 function Admin() {
  // const [userId, setUserId] = useState("");
   const [admin, setAdmin] = useState("");
@@ -26,11 +27,18 @@ function Admin() {
 
   return (
     <center>
-      <div id='ride'>
+      <div >
+    
         <div className="card">
           <div className="card-body">
-            <img src={'#'} style={{ 'borderRadius': '50%', 'height': '400px', 'width': '350px' }} />
             <h1 className="card-title">{admin.fullname}</h1>
+                 <NavDropdown title="Select" id="basic-nav-dropdown" className="btn btn-dark" alignRight>
+                    <NavDropdown.Item href="/updateadmin">Update Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/getalltrainer">Get All Trainer</NavDropdown.Item>
+                    <NavDropdown.Item href="/getallmember">Get All Member</NavDropdown.Item>
+                    <NavDropdown.Item href="/getalladmin">Get All Admin</NavDropdown.Item>
+                    <NavDropdown.Item href="/getallpaymentdetail">Get All Payment</NavDropdown.Item>
+                </NavDropdown>
           </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item"><b>role </b>:{admin.role}</li>
@@ -39,16 +47,9 @@ function Admin() {
             <li className="list-group-item"><b>Email </b>: {admin.email}</li>
             <li className="list-group-item"><b>Contact No </b>: {admin.contactno}</li>
           </ul>
-          <div className="card-body">
-            <a href="/updateadmin" className="btn btn-dark btn-lg btn-block"><b>Update Profile</b></a>
-            <a href="/getalltrainer" className="btn btn-dark btn-lg btn-block"><b>GetAllTrainer</b></a>
-            <a href="/getallmember" className="btn btn-dark btn-lg btn-block"><b>GetAllMember</b></a>
-            <a href="/gettrainingplan" className="btn btn-dark btn-lg btn-block"><b>GetTrainingPlan</b></a>
-            <a href="/getalladmin" className="btn btn-dark btn-lg btn-block"><b>GetAllAdmin</b></a>
-            <a href="/getallpaymentdetail" className="btn btn-dark btn-lg btn-block"><b>GetAllPayments</b></a>
-          </div>
+        
         </div>
-
+      
       </div>
     </center>
   )
