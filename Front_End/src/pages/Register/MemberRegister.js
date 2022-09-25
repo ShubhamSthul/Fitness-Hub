@@ -26,6 +26,7 @@ function MemberRegister() {
     const [messege, setMessege] = useState("");
     const [payment, setPayment] = useState("");
     const [tid, setTid] = useState("");
+    
 
 
     function addData() {
@@ -43,6 +44,29 @@ function MemberRegister() {
         user.username = username;
         user.password = password;
         user.fees = payment;
+        switch(payment){
+            case 150:
+                user.duration="one day"
+            break;
+            case 500:
+                user.duration="one week"
+            break;    
+            case 1500:
+                user.duration="one month"
+            break;
+            case 2500:
+                user.duration="two month"
+            break;
+            case 3500:
+                user.duration="three month"
+            break;
+            case 5600:
+                user.duration="six month"
+            break;
+            case 8000:
+                user.duration="one year"
+            break;
+        }
         user.tid=tid
 
         console.log(user);
@@ -64,7 +88,7 @@ function MemberRegister() {
     }
 
     return (
-        <section>
+        
             <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col col-xl-10">
@@ -162,13 +186,13 @@ function MemberRegister() {
                                             <div>
                                                 <label className="form-label">Payment</label>
                                                 <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setPayment(e.target.value); }}>
-                                                    <option value="150">150 RS.</option>
-                                                    <option value="500">500 RS.</option>
-                                                    <option value="1500">1500 RS.</option>
-                                                    <option value="2500">2500 RS.</option>
-                                                    <option value="3500">3500 RS.</option>
-                                                    <option value="5600">5600 RS.</option>
-                                                    <option value="8000">8000 RS.</option>
+                                                    <option value="150">DAILY PASS-150 RS.</option>
+                                                    <option value="500">WEEKLY PASS-500 RS.</option>
+                                                    <option value="1500">ONE MONTHLY-1500 RS.</option>
+                                                    <option value="2500">TWO MONTH-2500 RS.</option>
+                                                    <option value="3500">THREE MONTH-3500 RS.</option>
+                                                    <option value="5600">SIX MONTH-5600 RS.</option>
+                                                    <option value="8000">ONE YEAR-8000 RS.</option>
                                                 </select>
                                             </div>
                                             <b style={{ 'color': 'orangered' }}>{messege}</b>
@@ -190,7 +214,7 @@ function MemberRegister() {
                     </div>
                 </div>
             </div>
-        </section>
+        
     );
 }
 

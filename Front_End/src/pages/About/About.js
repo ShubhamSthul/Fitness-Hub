@@ -76,9 +76,8 @@ function About() {
 <br/>
 <br/>
 
-   <section>
+   <div>
       <div className="container">
-        <section>
           <div className="row">
             <h1 className="section-heading">Our Packages</h1>
           </div>
@@ -183,16 +182,10 @@ function About() {
                 </div>
               </div>
             </div>
-
-          
-
           </div>
-        </section>
       </div>
-      </section>
+      </div>
     </div>
-
-
   );
 }
 

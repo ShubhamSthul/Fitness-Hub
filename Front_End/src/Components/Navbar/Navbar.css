@@ -16,16 +16,17 @@ i {
   padding: 15px;
   color: #fff;
   pointer-events: none;
-  
 }
 
 .navbar-mainbg {
   background-color:rgb(5, 101, 134);
-  padding: 0px;
+  padding-bottom: 0px;
+  height: 62px;
 }
 #navbarSupportedContent {
   overflow: hidden;
   position: relative;
+  /* padding-bottom: none; */
 }
 #navbarSupportedContent ul {
   padding: 0px;

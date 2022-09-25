@@ -98,13 +98,18 @@ function UpdateTrainingPlan() {
   }
   return (
     <div>
-      {add && check && <><Table striped bordered hover className='table-responsive'>
+      <br/>
+      <br/>
+      <center>
+      <h2><b>UPDATE-TRAINING-DETAILS</b></h2>
+        <br />
+        <br />
+      {add && check && <><Table  striped bordered hover variant="dark" style={{ 'textAlign': 'center' }}>
         <thead>
           <tr>
             <th>DAYS</th>
             <th>WORKOUT</th>
             <th>DIET</th>
-
           </tr>
         </thead>
         <tbody>
@@ -157,6 +162,7 @@ function UpdateTrainingPlan() {
         </tbody>
       </Table></>}
       {messege}
+      </center>
     </div>
   )
 }

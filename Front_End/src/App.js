@@ -24,7 +24,6 @@ import Member from './pages/Profile/Member/Member';
 import UpdateAdmin from './pages/Profile/Admin/UpdateAdmin'
 import UpdateTrainer from './pages/Profile/Trainer/UpdateTrainer'
 import UpdateMember from './pages/Profile/Member/UpdateMember'
-import Payment from './pages/Register/Payment';
 import AdminRegister from './pages/Register/AdminRegister';
 import GetAllMemberbyid from './pages/Profile/Trainer/GetAllMemberbyid';
 import GetAllTrainer from './pages/Profile/Admin/GetAllTrainer';
@@ -62,7 +61,6 @@ class App extends Component {
                 <Route path="/updateadmin" exact><UpdateAdmin /></Route>
                 <Route path="/updatetrainer" exact><UpdateTrainer /></Route>
                 <Route path="/updatemember" exact><UpdateMember /></Route>
-                <Route path="/payment" exact><Payment /></Route>
                 <Route path="/getalltrainer" exact><GetAllTrainer /></Route>
                 <Route path="/getallmember" exact><GetAllMember /></Route>
                 <Route path="/getalladmin" exact><GetAllAdmin /></Route>

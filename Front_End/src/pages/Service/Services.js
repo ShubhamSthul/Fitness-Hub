@@ -13,7 +13,7 @@ import i9 from './24-hours.png'
 const Services = () => {
   return (
     <div className="container">
-    <section>
+    {/* <section> */}
       <div className="row">
         <h1 className="section-heading">Our Services</h1>
       </div>
@@ -118,7 +118,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-    </section>
+    {/* </section> */}
     </div>
   )
 }

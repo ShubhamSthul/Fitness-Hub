@@ -10,18 +10,21 @@ public class Payment {
 	
 	int loginid;
 	
+	String duration;
+	
 	public Payment(String name, double fees) {
 		super();
 		this.name = name;
 		this.fees = fees;
 	}
 
-	public Payment(int pid, double fees,String name, int loginid) {
+	public Payment(int pid, double fees,String name, int loginid,String duration) {
 		super();
 		this.pid = pid;
 		this.name = name;
 		this.fees = fees;
 		this.loginid = loginid;
+		this.duration = duration;
 	}
 
 	public Payment() {
@@ -58,6 +61,14 @@ public class Payment {
 
 	public void setLoginid(int loginid) {
 		this.loginid = loginid;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
 	}
     	
 }

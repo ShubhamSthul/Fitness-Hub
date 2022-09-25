@@ -62,7 +62,7 @@ const Navbar = (props) => {
     <div>
       <nav className="navbar navbar-expand-lg navbar-mainbg">
 
-        <img src={logo} alt='logo' height='62px' width='62px' />
+        <img src={logo} alt='logo' height='60px' width='60px' />
         <NavLink className="navbar-brand navbar-logo" to="/" exact>
          <span style={{'color':'#ffcc00'}}><b>Fitness-Hub</b></span> 
         </NavLink>
@@ -93,14 +93,6 @@ const Navbar = (props) => {
                 </i>Home
               </NavLink>
             </li>
-            {/* <li className="nav-item active">
-              <NavLink className="nav-link" to="/page" exact>
-                <i
-                  className="fas fa-home">
-                </i>Pagination Example
-              </NavLink>
-            </li> */}
-
             <li className="nav-item">
               <NavLink className="nav-link" to="/about" exact>
                 <i

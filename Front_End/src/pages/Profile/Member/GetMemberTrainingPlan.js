@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "../ride.css";
 import Table from 'react-bootstrap/esm/Table';
-import {ReactSession} from 'react-client-session';
+import { ReactSession } from 'react-client-session';
 
 function GetMemberTrainingPlan() {
- 
-  const user=ReactSession.get("user");
-  const [workout,setWorkout]=useState("");
+
+  const user = ReactSession.get("user");
+  const [workout, setWorkout] = useState("");
   const [diet, setDiet] = useState("")
-  const [add,setAdd]=useState(false)
+  const [add, setAdd] = useState(false)
 
   console.log(workout);
   console.log(diet);
-  useEffect(()=>{
+  useEffect(() => {
 
-    axios.get("http://localhost:8080/getdietplan/"+user.memid)
+    axios.get("http://localhost:8080/getdietplan/" + user.memid)
       .then((response) => {
         setDiet(response.data);
         setAdd(true)
@@ -24,7 +24,7 @@ function GetMemberTrainingPlan() {
       .catch((error) => {
         console.log(error);
       })
-      axios.get("http://localhost:8080/getWorkoutplan/"+user.memid)
+    axios.get("http://localhost:8080/getWorkoutplan/" + user.memid)
       .then((response) => {
         setWorkout(response.data);
         setAdd(true)
@@ -34,23 +34,29 @@ function GetMemberTrainingPlan() {
         console.log(error);
       })
 
-  },[])
+  }, [])
   return (
     <div>
-   {add && <><Table striped bordered hover className='table-responsive'>
-        <thead>
-          <tr>
-            <th>DAYS</th>
-            <th>SUNDAY</th>
-            <th>MONDAY</th>
-            <th>TUESDAY</th>
-            <th>WEDNESDAY</th>
-            <th>THURSDAY</th>
-            <th>FRIDAY</th>
-            <th>SATURDAY</th>
-          </tr>
-        </thead>
-        <tbody>
+      <br />
+      <br />
+      <center>
+        <h2><b>TRAINING-PLAN</b></h2>
+        <br />
+        <br />
+        {add && <><Table striped bordered hover variant="dark" style={{ 'textAlign': 'center' }}>
+          <thead>
+            <tr>
+              <th>DAYS</th>
+              <th>SUNDAY</th>
+              <th>MONDAY</th>
+              <th>TUESDAY</th>
+              <th>WEDNESDAY</th>
+              <th>THURSDAY</th>
+              <th>FRIDAY</th>
+              <th>SATURDAY</th>
+            </tr>
+          </thead>
+          <tbody>
             <tr>
               <td>WORKOUT</td>
               <td>{workout.sun}</td>
@@ -71,8 +77,9 @@ function GetMemberTrainingPlan() {
               <td>{diet.fri}</td>
               <td>{diet.sat}</td>
             </tr>
-        </tbody>
-      </Table></>}
+          </tbody>
+        </Table></>}
+      </center>
     </div>
   )
 }

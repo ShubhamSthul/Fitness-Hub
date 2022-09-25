@@ -28,7 +28,6 @@ function Admin() {
   return (
     <center>
       <div >
-    
         <div className="card">
           <div className="card-body">
             <h1 className="card-title">{admin.fullname}</h1>

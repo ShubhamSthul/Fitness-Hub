@@ -27,7 +27,7 @@ public class PaymentController {
 	{
 		String message="";
 		try {
-			temp.update("insert into payment (fees,name,loginid) values (?,?,?)",payment.getFees(),payment.getName(),payment.getLoginid());
+			temp.update("insert into payment (fees,name,loginid,duration) values (?,?,?,?)",payment.getFees(),payment.getName(),payment.getLoginid(),payment.getDuration());
 			message="Successfully Added";
 		} catch (DataAccessException e) {
 			message="Query Failed";
@@ -41,7 +41,7 @@ public class PaymentController {
 	{
 		Payment pm=null;
 		try {
-			pm = temp.queryForObject("select * from payment where loginid="+id,(rs,rownum)->{return new Payment(rs.getInt(1),rs.getDouble(2),rs.getString(3),rs.getInt(4));});
+			pm = temp.queryForObject("select * from payment where loginid="+id,(rs,rownum)->{return new Payment(rs.getInt(1),rs.getDouble(2),rs.getString(3),rs.getInt(4),rs.getString(5));});
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 		}		
@@ -54,7 +54,7 @@ public class PaymentController {
 	{
 			List<Payment> pm=null;
 			try {
-				pm = temp.query("select * from payment",(rs,rownum)->{return new Payment(rs.getInt(1),rs.getDouble(2),rs.getString(3),rs.getInt(4));});
+				pm = temp.query("select * from payment",(rs,rownum)->{return new Payment(rs.getInt(1),rs.getDouble(2),rs.getString(3),rs.getInt(4),rs.getString(5));});
 			} catch (DataAccessException e) {
 				e.printStackTrace();
 			}
