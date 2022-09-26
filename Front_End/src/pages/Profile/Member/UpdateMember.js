@@ -53,19 +53,10 @@ function UpdateMember() {
 
             })
 
-        // axios.get("http://localhost:8080/sharesteer/getAllUsers")
-        //     .then((response) => {
-        //         ReactSession.set("allUser", response.data);
-        //     })
-        //     .catch((error) => {
-        //         console.log(error);
-        //     })
-            
-
     }
 
     return (
-       <section>
+      
             <div className="container py-5 h-100">
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col col-xl-10">
@@ -133,7 +124,7 @@ function UpdateMember() {
                     </div>
                 </div>
             </div>
-        </section>
+        
     );
 }
 

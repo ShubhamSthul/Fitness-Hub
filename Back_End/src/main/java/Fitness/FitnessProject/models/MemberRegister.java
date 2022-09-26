@@ -16,6 +16,7 @@ public class MemberRegister
   int loginid;
   String role;
   int fees;
+  String duration;
   
 public int getFees() {
 	return fees;
@@ -212,6 +213,14 @@ public int getTid() {
 
 public void setTid(int tid) {
 	this.tid = tid;
+}
+
+public String getDuration() {
+	return duration;
+}
+
+public void setDuration(String duration) {
+	this.duration = duration;
 }
 
 

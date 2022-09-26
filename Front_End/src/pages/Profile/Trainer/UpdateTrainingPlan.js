@@ -98,70 +98,70 @@ function UpdateTrainingPlan() {
   }
   return (
     <div>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <center>
-      <h2><b>UPDATE-TRAINING-DETAILS</b></h2>
+        <h2><b>UPDATE-TRAINING-DETAILS</b></h2>
         <br />
         <br />
-      {add && check && <><Table  striped bordered hover variant="dark" style={{ 'textAlign': 'center' }}>
-        <thead>
-          <tr>
-            <th>DAYS</th>
-            <th>WORKOUT</th>
-            <th>DIET</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>SUNDAY</th>
-            <td><input type='text' defaultValue={workout.sun} onBlur={((e) => { setWsun(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.sun} onBlur={((e) => { setDsun(e.target.value) })} /></td>
-          </tr>
+        {add && check && <><Table striped bordered hover variant="dark" style={{ 'textAlign': 'center' }}>
+          <thead>
+            <tr>
+              <th>DAYS</th>
+              <th>WORKOUT</th>
+              <th>DIET</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>SUNDAY</th>
+              <td><input type='text' defaultValue={workout.sun} onBlur={((e) => { setWsun(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.sun} onBlur={((e) => { setDsun(e.target.value) })} /></td>
+            </tr>
 
-          <tr>
-            <th>MONDAY</th>
-            <td><input type='text' defaultValue={workout.mon} onBlur={((e) => { setWmon(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.mon} onBlur={((e) => { setDmon(e.target.value) })} /></td>
-          </tr>
+            <tr>
+              <th>MONDAY</th>
+              <td><input type='text' defaultValue={workout.mon} onBlur={((e) => { setWmon(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.mon} onBlur={((e) => { setDmon(e.target.value) })} /></td>
+            </tr>
 
-          <tr>
-            <th>TUESDAY</th>
-            <td><input type='text' defaultValue={workout.tue} onBlur={((e) => { setWtue(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.tue} onBlur={((e) => { setDtue(e.target.value) })} /></td>
-          </tr>
+            <tr>
+              <th>TUESDAY</th>
+              <td><input type='text' defaultValue={workout.tue} onBlur={((e) => { setWtue(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.tue} onBlur={((e) => { setDtue(e.target.value) })} /></td>
+            </tr>
 
-          <tr>
-            <th>WEDNESDAY</th>
-            <td><input type='text' defaultValue={workout.wed} onBlur={((e) => { setWwed(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.wed} onBlur={((e) => { setDwed(e.target.value) })} /></td>
-          </tr>
+            <tr>
+              <th>WEDNESDAY</th>
+              <td><input type='text' defaultValue={workout.wed} onBlur={((e) => { setWwed(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.wed} onBlur={((e) => { setDwed(e.target.value) })} /></td>
+            </tr>
 
-          <tr>
-            <th>THURSDAY</th>
-            <td><input type='text' defaultValue={workout.thu} onBlur={((e) => { setWthu(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.thu} onBlur={((e) => { setDthu(e.target.value) })} /></td>
-          </tr>
+            <tr>
+              <th>THURSDAY</th>
+              <td><input type='text' defaultValue={workout.thu} onBlur={((e) => { setWthu(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.thu} onBlur={((e) => { setDthu(e.target.value) })} /></td>
+            </tr>
 
-          <tr>
-            <th>FRIDAY</th>
-            <td><input type='text' defaultValue={workout.fri} onBlur={((e) => { setWfri(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.fri} onBlur={((e) => { setDfri(e.target.value) })} /></td>
-          </tr>
+            <tr>
+              <th>FRIDAY</th>
+              <td><input type='text' defaultValue={workout.fri} onBlur={((e) => { setWfri(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.fri} onBlur={((e) => { setDfri(e.target.value) })} /></td>
+            </tr>
 
-          <tr>
-            <th>SATURDAY</th>
-            <td><input type='text' defaultValue={workout.sat} onBlur={((e) => { setWsat(e.target.value) })} /></td>
-            <td><input type='text' defaultValue={diet.sat} onBlur={((e) => { setDsat(e.target.value) })} /></td>
-          </tr>
-          <tr>
-            <th>Update</th>
-            <td><button className="btn btn-primary" onClick={updateWorkoutPlan} type="button">Update</button></td>
-            <td><button className="btn btn-primary" onClick={updateDietPlan} type="button">Update</button></td>
-          </tr>
-        </tbody>
-      </Table></>}
-      {messege}
+            <tr>
+              <th>SATURDAY</th>
+              <td><input type='text' defaultValue={workout.sat} onBlur={((e) => { setWsat(e.target.value) })} /></td>
+              <td><input type='text' defaultValue={diet.sat} onBlur={((e) => { setDsat(e.target.value) })} /></td>
+            </tr>
+            <tr>
+              <th>Update</th>
+              <td><button className="btn btn-primary" onClick={updateWorkoutPlan} type="button">Update</button></td>
+              <td><button className="btn btn-primary" onClick={updateDietPlan} type="button">Update</button></td>
+            </tr>
+          </tbody>
+        </Table></>}
+        {messege}
       </center>
     </div>
   )

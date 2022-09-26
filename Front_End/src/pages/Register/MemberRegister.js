@@ -26,7 +26,7 @@ function MemberRegister() {
     const [messege, setMessege] = useState("");
     const [payment, setPayment] = useState("");
     const [tid, setTid] = useState("");
-    
+
 
 
     function addData() {
@@ -44,30 +44,22 @@ function MemberRegister() {
         user.username = username;
         user.password = password;
         user.fees = payment;
-        switch(payment){
-            case 150:
-                user.duration="one day"
-            break;
-            case 500:
-                user.duration="one week"
-            break;    
-            case 1500:
-                user.duration="one month"
-            break;
-            case 2500:
-                user.duration="two month"
-            break;
-            case 3500:
-                user.duration="three month"
-            break;
-            case 5600:
-                user.duration="six month"
-            break;
-            case 8000:
-                user.duration="one year"
-            break;
-        }
-        user.tid=tid
+        console.log(payment);
+        if (payment == "150")
+            user.duration = "one day"
+        else if (payment == "500")
+            user.duration = "one week"
+        else if (payment == "1500")
+            user.duration = "one month"
+        else if (payment == "2500")
+            user.duration = "two month"
+        else if (payment == "3500")
+            user.duration = "three month"
+        else if (payment == "5600")
+            user.duration = "six month"
+        else
+            user.duration = "one year"
+        user.tid = tid
 
         console.log(user);
 
@@ -88,133 +80,133 @@ function MemberRegister() {
     }
 
     return (
-        
-            <div className="container py-5 h-100">
-                <div className="row d-flex justify-content-center align-items-center h-100">
-                    <div className="col col-xl-10">
-                        <div className="card" style={{ "borderRadius": " 1rem" }}>
-                            <div className="row g-0">
-                                <div className="col-md-6 col-lg-5 d-none d-md-block">
-                                    <img src={i1}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    <img src={i2}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    <img src={i3}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    <img src={i4}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    <img src={i6}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    
-                                    <img src={i8}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    <img src={i9}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
-                                    <img src={i5}
-                                        alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} />
-                                </div>
-                                <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                    <div className="card-body p-4 p-lg-5 text-black" style={{ 'backgroundColor': 'rgb(5, 101, 134)' }}>
-                                        <form>
-                                            <a className="form-select btn btn-dark btn-lg btn-block" href="/trainerregistration" >Trainer Registration</a>
-                                            <a className="form-select btn btn-dark btn-lg btn-block" href="/adminregistration" >Admin Registration</a>
-                                            <div className="d-flex align-items-center mb-3 pb-1">
-                                                <i className="fas fa-key fa-2x me-3" style={{ "color": " #000" }}></i>
-                                                <span className="h1 fw-bold mb-0">Member Register</span>
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Username</label>
-                                                <input type="text" placeholder='enter your username' className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setusername(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Password</label>
-                                                <input type="password" placeholder='enter your password' className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setPassword(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Full Name</label>
-                                                <input type="text" placeholder='enter your full name' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setFullname(e.target.value) }} />
-                                            </div>
-                                            <div>
-                                                <label className="form-label">gender</label>
-                                                <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setGender(e.target.value); }}>
-                                                    <option value="Male">Select</option>
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female">Female</option>
-                                                    <option value="Other">Other</option>
-                                                </select>
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Height</label>
-                                                <input type="number" placeholder='enter your height' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setHeight(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Weight</label>
-                                                <input type="number" placeholder='enter your weight' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setWeight(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Chest</label>
-                                                <input type="number" placeholder='enter your chest size' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setChest(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Waist</label>
-                                                <input type="number" placeholder='enter your waist size' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setWaist(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Injury</label>
-                                                <input type="text" placeholder='enter your injury if any' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setInjury(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">E-mail</label>
-                                                <input type="mail" placeholder='enter your email' className="form-control form-control-lg" required minLength={5} maxLength={70} onBlur={(e) => { setEmail(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Contact</label>
-                                                <input type="number" placeholder='enter your contact no' className="form-control form-control-lg" required minLength={3} maxLength={16} onBlur={(e) => { setContact(e.target.value) }} />
-                                            </div>
-                                            <div className="form-outline mb-4">
-                                                <label className="form-label">Trainer Id</label>
-                                                <input type="mail" placeholder='enter trainer id' className="form-control form-control-lg" required  onBlur={(e) => { setTid(e.target.value) }} />
-                                            </div>
-                                            <div>
-                                                <label className="form-label">Status</label>
-                                                <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setStatus(e.target.value); }}>
-                                                    <option >Select</option>
-                                                    <option value="active">Active</option>
-                                                    <option value="inactive">InActive</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <label className="form-label">Payment</label>
-                                                <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setPayment(e.target.value); }}>
-                                                    <option value="150">DAILY PASS-150 RS.</option>
-                                                    <option value="500">WEEKLY PASS-500 RS.</option>
-                                                    <option value="1500">ONE MONTHLY-1500 RS.</option>
-                                                    <option value="2500">TWO MONTH-2500 RS.</option>
-                                                    <option value="3500">THREE MONTH-3500 RS.</option>
-                                                    <option value="5600">SIX MONTH-5600 RS.</option>
-                                                    <option value="8000">ONE YEAR-8000 RS.</option>
-                                                </select>
-                                            </div>
-                                            <b style={{ 'color': 'orangered' }}>{messege}</b>
-                                            <div className="pt-1 mb-4">
-                                                <button className="btn btn-dark btn-lg btn-block" type="button" onClick={addData}>Register</button>
-                                            </div>
-                                            <div className="pt-1 mb-4">
-                                                <button className="btn btn-dark btn-lg btn-block" type="Reset">Reset</button>
-                                            </div>
-                                            <a style={{ "color": "black" }} href="/forgetpassword">Forgot password?</a>
-                                            <p className="mb-5 pb-lg-2" style={{ "color": " #fff" }}>Already't have an account? <a href="/login"
-                                                style={{ "color": " #000" }}>Login here</a></p>
-                                            <a href="/termsAndCondition" style={{ "color": "black" }}>Terms and Conditions.</a>
-                                        </form>
-                                    </div>
+
+        <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+                <div className="col col-xl-10">
+                    <div className="card" style={{ "borderRadius": " 1rem" }}>
+                        <div className="row g-0">
+                            <div className="col-md-6 col-lg-5 d-none d-md-block">
+                                <img src={i1}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+                                <img src={i2}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+                                <img src={i3}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+                                <img src={i4}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+                                <img src={i6}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+
+                                <img src={i8}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+                                <img src={i9}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} /><br /><br /><br />
+                                <img src={i5}
+                                    alt="login form" className="img-fluid" style={{ "borderRadius": " 1rem 0 0 1rem" }} />
+                            </div>
+                            <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                                <div className="card-body p-4 p-lg-5 text-black" style={{ 'backgroundColor': 'rgb(5, 101, 134)' }}>
+                                    <form>
+                                        <a className="form-select btn btn-dark btn-lg btn-block" href="/trainerregistration" >Trainer Registration</a>
+                                        <a className="form-select btn btn-dark btn-lg btn-block" href="/adminregistration" >Admin Registration</a>
+                                        <div className="d-flex align-items-center mb-3 pb-1">
+                                            <i className="fas fa-key fa-2x me-3" style={{ "color": " #000" }}></i>
+                                            <span className="h1 fw-bold mb-0">Member Register</span>
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Username</label>
+                                            <input type="text" placeholder='enter your username' className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setusername(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Password</label>
+                                            <input type="password" placeholder='enter your password' className="form-control form-control-lg" required minLength={8} maxLength={16} onBlur={(e) => { setPassword(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Full Name</label>
+                                            <input type="text" placeholder='enter your full name' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setFullname(e.target.value) }} />
+                                        </div>
+                                        <div>
+                                            <label className="form-label">gender</label>
+                                            <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setGender(e.target.value); }}>
+                                                <option value="Male">Select</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Height</label>
+                                            <input type="number" placeholder='enter your height' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setHeight(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Weight</label>
+                                            <input type="number" placeholder='enter your weight' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setWeight(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Chest</label>
+                                            <input type="number" placeholder='enter your chest size' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setChest(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Waist</label>
+                                            <input type="number" placeholder='enter your waist size' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setWaist(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Injury</label>
+                                            <input type="text" placeholder='enter your injury if any' className="form-control form-control-lg" required minLength={1} maxLength={16} onBlur={(e) => { setInjury(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">E-mail</label>
+                                            <input type="mail" placeholder='enter your email' className="form-control form-control-lg" required minLength={5} maxLength={70} onBlur={(e) => { setEmail(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Contact</label>
+                                            <input type="number" placeholder='enter your contact no' className="form-control form-control-lg" required minLength={3} maxLength={16} onBlur={(e) => { setContact(e.target.value) }} />
+                                        </div>
+                                        <div className="form-outline mb-4">
+                                            <label className="form-label">Trainer Id</label>
+                                            <input type="mail" placeholder='enter trainer id' className="form-control form-control-lg" required onBlur={(e) => { setTid(e.target.value) }} />
+                                        </div>
+                                        <div>
+                                            <label className="form-label">Status</label>
+                                            <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setStatus(e.target.value); }}>
+                                                <option >Select</option>
+                                                <option value="active">Active</option>
+                                                <option value="inactive">InActive</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <label className="form-label">Payment</label>
+                                            <select className="form-select btn btn-dark btn-lg btn-block" aria-label="Default select example" onChange={(e) => { setPayment(e.target.value); }}>
+                                                <option value="150">DAILY PASS-150 RS.</option>
+                                                <option value="500">WEEKLY PASS-500 RS.</option>
+                                                <option value="1500">ONE MONTHLY-1500 RS.</option>
+                                                <option value="2500">TWO MONTH-2500 RS.</option>
+                                                <option value="3500">THREE MONTH-3500 RS.</option>
+                                                <option value="5600">SIX MONTH-5600 RS.</option>
+                                                <option value="8000">ONE YEAR-8000 RS.</option>
+                                            </select>
+                                        </div>
+                                        <b style={{ 'color': 'orangered' }}>{messege}</b>
+                                        <div className="pt-1 mb-4">
+                                            <button className="btn btn-dark btn-lg btn-block" type="button" onClick={addData}>Register</button>
+                                        </div>
+                                        <div className="pt-1 mb-4">
+                                            <button className="btn btn-dark btn-lg btn-block" type="Reset">Reset</button>
+                                        </div>
+                                        <a style={{ "color": "black" }} href="/forgetpassword">Forgot password?</a>
+                                        <p className="mb-5 pb-lg-2" style={{ "color": " #fff" }}>Already't have an account? <a href="/login"
+                                            style={{ "color": " #000" }}>Login here</a></p>
+                                        <a href="/termsAndCondition" style={{ "color": "black" }}>Terms and Conditions.</a>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        
+        </div>
+
     );
 }
 

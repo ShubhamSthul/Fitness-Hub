@@ -14,7 +14,8 @@ const Services = () => {
   return (
     <div className="container">
     {/* <section> */}
-      <div className="row">
+      <div className="row" style={{"textAlign":"center"}}>
+        
         <h1 className="section-heading">Our Services</h1>
       </div>
       <div className="row">

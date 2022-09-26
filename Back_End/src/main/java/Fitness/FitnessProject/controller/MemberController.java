@@ -29,10 +29,11 @@ public class MemberController {
 			temp.update("insert into login (email,password,role,username) values (?,?,?,?)",mr.getEmail(),mr.getPassword(),"member",mr.getUsername());
 			int loginid=temp.queryForObject("select loginid from login where username='"+mr.getUsername()+"' and password='"+mr.getPassword()+"'",Integer.class);	
 			temp.update("insert into member (chest,contactno,email,fullname,gender,height,injury,status,tid,waist,weight,loginid) values (?,?,?,?,?,?,?,?,?,?,?,?)",mr.getChest(),mr.getContactno(),mr.getEmail(),mr.getFullname(),mr.getGender(),mr.getHeight(),mr.getInjury(),mr.getStatus(),mr.getTid(),mr.getWaist(),mr.getWeight(),loginid);
-			temp.update("insert into payment(name,fees,loginid) values(?,?,?)",mr.getFullname(),mr.getFees(),loginid);
+			temp.update("insert into payment(name,fees,loginid,duration) values(?,?,?,?)",mr.getFullname(),mr.getFees(),loginid,mr.getDuration());
 			message="Successfully Added ,Your Login Id :"+loginid;
-			temp.update("insert into diet_plan(id) values (?)",loginid);
-			temp.update("insert into workout_plan(id) values (?)",loginid);
+			int memid=temp.queryForObject("select memid from member where loginid="+loginid,Integer.class);	
+			temp.update("insert into diet_plan(id) values (?)",memid);
+			temp.update("insert into workout_plan(id) values (?)",memid);
 
 		} catch (DataAccessException e) {
 			message="Username Already exists choose another one";

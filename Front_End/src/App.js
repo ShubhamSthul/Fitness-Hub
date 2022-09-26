@@ -33,7 +33,6 @@ import GetPaymentDetail from './pages/Profile/Admin/GetPaymentDetail';
 import GetMemberTrainingPlan from './pages/Profile/Member/GetMemberTrainingPlan';
 import GetTrainerInfo from './pages/Profile/Member/GetTrainerInfo';
 import UpdateTrainingPlan from './pages/Profile/Trainer/UpdateTrainingPlan';
-import Page from './pages/page';
 
 
 ReactSession.setStoreType("localStorage");
@@ -47,7 +46,6 @@ class App extends Component {
             <Navbar />
             <main className='container'>
               <Switch>
-              <Route path="/page" exact><Page /></Route>
                 <Route path="/" exact><Home /></Route>
                 <Route path="/home" exact><Home /></Route>
                 <Route path="/about" exact><About /></Route>
