@@ -126,10 +126,7 @@ const Home = () => {
           ))}
         </tbody>
       </Table>
-
       </center>
-
-      
       <div>
       </div>
     </div>
